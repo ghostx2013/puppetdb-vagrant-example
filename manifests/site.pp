@@ -11,11 +11,16 @@ apt::source { "puppetlabs":
   key        => '4BD6EC30',
   key_server => 'pgp.mit.edu',
 }->
-package { ['puppetmaster-passenger', 'puppetdb']:
+package { 'puppetmaster-passenger':
 }->
 file { '/var/lib/puppet/reports':
   owner   => 'puppet',
   group   => 'puppet',
   mode    => '0640',
   recurse => true,
+}->
+class { 'puppetdb': }->
+class { 'puppetdb::master::config':
+  puppet_service_name => 'apache2',
 }
+

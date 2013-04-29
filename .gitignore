@@ -1,0 +1,7 @@
+Gemfile.lock
+Puppetfile.lock
+.tmp/
+.librarian/
+modules/
+.ruby-version
+.vagrant/
