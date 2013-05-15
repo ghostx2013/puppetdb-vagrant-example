@@ -11,9 +11,21 @@
 * Change to a suitable gemset in rvm or rbenv
 * Run `bundle update`
 * Update the modules with `librarian-puppet install`
+
+### Single Node
+
+* Change directory to `singlenode`
 * Then provision with:
-    * Fusion: `vagrant up master-fusion --provider vmware_fusion`
-    * Virtualbox: `vagrant up master-vbox`
-* Run provision again, if you get errors: `vagrant provision master-fusion` (or master-vbox)
-* Login to the box with: `vagrant ssh master-fusion` (or master-vbox)
+    * Fusion: `vagrant up --provider vmware_fusion`
+* Run provision again, if you get errors: `vagrant provision`
+* Login to the box with: `vagrant ssh`
+* Destroy all boxes with: `vagrant destroy`
+
+### Multi Node
+
+* Change directory to `multinode`
+* Then provision with:
+    * Fusion: `vagrant up --provider vmware_fusion`
+* Run provision again, if you get errors: `vagrant provision`
+* Login to the box with: `vagrant ssh puppetdb`
 * Destroy all boxes with: `vagrant destroy`
