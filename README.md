@@ -1,8 +1,7 @@
 ## You need:
 
-* VMWare Fusion 5.0 or VirtualBox 4.2.10
+* VirtualBox 4.2.10 or greater
 * Vagrant 1.2.x or greater
-* Vagrant Fusion Driver if using VMWare Fusion
 * RVM or rbenv is recommended
 
 ## Usage
@@ -14,12 +13,20 @@
 
 ### Single Node
 
-* Change directory to `singlenode`
-* Then provision with:
-    * Fusion: `vagrant up --provider vmware_fusion`
+* Change directory: `cd singlenode`
+* Then provision with: `vagrant up`
 * Run provision again, if you get errors: `vagrant provision`
 * Login to the box with: `vagrant ssh`
 * Destroy all boxes with: `vagrant destroy`
+
+You can access the PuppetDB console using: <http://localhost:18080/dashboard/index.html>
+
+You can also connect to the PostgreSQL database on:
+
+* host: localhost
+* port: 15432
+* username: puppetdb
+* password: puppetdb
 
 ### Multi Node
 

@@ -6,3 +6,8 @@ class { 'my_stages':
 class { 'my_plrepo':
   stage => 'pre',
 }
+
+# Setup hostnames early
+class { 'my_hosts':
+  stage => 'pre',
+}
